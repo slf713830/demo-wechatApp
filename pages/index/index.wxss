@@ -1,0 +1,141 @@
+/**index.wxss**/
+page{
+	height:100%;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header{
+	height: 103rpx;
+	text-align: center;
+	background:#0dc441 url(../../images/1.png) no-repeat center;
+	background-size:100% auto;
+	width:100%;
+	position:fixed;
+	top:0;
+	z-index: 55;
+}
+.header view{
+	float: left;
+	font-size: 27rpx;
+	color:#fff;
+	position: absolute;
+}
+.header .hea-l{
+	width:141rpx;
+	height:56rpx;
+	line-height:56rpx;
+	top:24rpx;
+	left: 235rpx;
+	z-index: 5;
+}
+.header .hea-r{
+	top:36rpx;
+	right: 283rpx;
+	z-index: 5;
+}
+.header image{
+	width:100%;
+	opacity: 0.9;
+	position: absolute;
+}
+.header #heaimg-1{
+  left:0;
+}
+.header #heaimg-2{
+  right:0;
+  opacity:0.2;
+  display: none;
+}
+.tab{
+  color:#666;
+	border-bottom:3rpx solid #d9d9d9;
+	text-align: center;
+	background:#fff;
+  height:84rpx;
+	position: fixed;
+	top:103rpx;
+	width:100%;
+}
+.tabtext{
+  float:left;
+  line-height:80rpx;
+  width:33.33%;
+  font-size:30rpx;
+}
+.tab .tabactive{
+	color:#0dc441;
+	border-bottom:7rpx solid #0dc441;
+}
+
+.main{
+  margin-top:195rpx;
+	overflow: hidden;
+	padding-bottom:101rpx;
+	width: 100%;
+}
+.main .content{
+  width:366rpx;
+  height:435rpx;
+  border:2rpx solid #e5e5e5;
+  float:left;
+  margin-bottom:11rpx;
+}
+.content image{
+  width:366rpx;
+  height:366rpx;
+  border-bottom:2rpx solid #e5e5e5;
+}
+.content:nth-child(odd){
+  margin-left:10rpx;
+}
+.content text{
+  font-size:26rpx;
+  padding-left:23rpx;
+}
+
+.footer{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	background: #fff;
+	height:101rpx;
+	border-top:3rpx solid #d6d6d6;
+	z-index:999;
+}
+.footer i{
+  line-height:58rpx;
+}
+.footer view{
+	color:#d6d6d6;
+	height:101rpx;
+	text-align: center;
+	width:20%;
+	float: left;
+	
+}
+.footer view text{
+	font-size:27rpx;
+	/*line-height:101rpx;*/
+	display: block;
+}
+.footer .canmera{
+	width: 119rpx;
+	height: 119rpx;
+	position: absolute;
+	border: 2rpx solid #d6d6d6;
+	border-radius: 50%;
+	bottom:0;
+	left:320rpx;
+	background:#fff;
+}
+.footer .canmera i{
+	line-height:119rpx;
+  font-size:65rpx;
+}
+.footer .active{
+  color:#0dc441;
+}

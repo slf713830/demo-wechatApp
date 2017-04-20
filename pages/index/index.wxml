@@ -1,0 +1,109 @@
+<!--index.wxml-->
+<view style="height:100%;overflow:hidden">
+  <view class="header">
+    <view class="hea-l">热点</view>
+      <image src="../../images/2.png" id="heaimg-1" mode="widthFix"></image> 
+      <view class="hea-r">关注</view>
+      <image src="../../images/3.png" alt="" id="heaimg-2" mode="widthFix"></image>  
+  </view>
+
+  <view class="tab">
+    <view bindtap="handleChange" hover data-index="0" class="tabtext {{navIndex==0?'tabactive':''}}">足球现场</view>
+    <view bindtap="handleChange" hover data-index="1" class="tabtext {{navIndex==1?'tabactive':''}}">足球生活</view>
+    <view bindtap="handleChange" hover data-index="2" class="tabtext {{navIndex==2?'tabactive':''}}">足球美女</view>
+  </view>
+
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+
+  <!--<view hidden="{{hasRefesh}}" style="position:absolute;z-index:999;top:195rpx;">
+    正在刷新...
+  </view>-->
+  <view class="main">       
+    <swiper style="height:958rpx" bindchange="swiperChange" current="{{navIndex}}">
+      <!--足球现场--> 
+      
+      <block>
+      <swiper-item style="overflow-y:scroll">
+      <scroll-view style="height:100%;" scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="refesh" bindscroll="getScroll">
+        <view wx:if="{{hasRefesh}}">
+        <icon type="waiting" size="45"/><text>刷新中...</text></view>
+        <view wx:else  style="display:none" ></view>
+        <view class="content" wx:for="{{lists}}" wx:key="{{index}}">
+          <image src="{{item.img}}"></image>
+          <text>{{item.title}}</text>
+        </view>
+          
+          <view wx:if="{{hasMore}}" style="height:50rpx;width:100%;float:left">
+          <icon type="waiting" size="45"/><text>玩命的加载中...</text></view>
+          <view wx:else><text>没更多内容了</text></view>
+        
+      </scroll-view>  
+      </swiper-item>
+      </block>
+       
+      <!--足球生活-->
+      <block>
+      <swiper-item style="overflow-y:scroll">
+      <scroll-view style="height:100%;" scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="refesh">
+        <view wx:if="{{hasRefesh}}">
+        <icon type="waiting" size="45"/><text>刷新中...</text></view>
+        <view wx:else  style="display:none" ></view>
+        <view class="content" wx:for="{{lists}}" wx:key="{{index}}">
+          <image src="{{item.img}}"></image>
+          <text>{{item.title}}</text>
+        </view>
+          
+          <view wx:if="{{hasMore}}" style="height:50rpx;width:100%">
+          <icon type="waiting" size="45"/><text>玩命的加载中...</text></view>
+          <view wx:else><text>没更多内容了</text></view>
+        
+      </scroll-view>  
+      </swiper-item>
+      </block>
+      <!--足球美女-->
+      <block>
+      <swiper-item style="overflow-y:scroll">
+      <scroll-view style="height:100%;" scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="refesh">
+        <view wx:if="{{hasRefesh}}">
+        <icon type="waiting" size="45"/><text>刷新中...</text></view>
+        <view wx:else  style="display:none" ></view>
+        <view class="content" wx:for="{{lists}}" wx:key="{{index}}">
+          <image src="{{item.img}}"></image>
+          <text>{{item.title}}</text>
+        </view>
+          
+          <view wx:if="{{hasMore}}" style="height:50rpx;width:100%">
+          <icon type="waiting" size="45"/><text>玩命的加载中...</text></view>
+          <view wx:else><text>没更多内容了</text></view>
+        
+      </scroll-view>  
+      </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="footer">
+    <view id="homepage" class="active">
+        <i class="iconfont icon-shouye-shouye"></i>
+        <text>首页</text>
+    </view>
+    <view id="search">
+        <i class="iconfont icon-fangdajing"></i>
+        <text>发现</text>
+    </view>
+    <view></view>
+    <view class="canmera">
+        <i class="iconfont icon-zhaoxiangji"></i>
+    </view>
+    <view id="user">
+        <i class="iconfont icon-wode"></i>
+        <text>我的</text>
+    </view>
+    <view>
+        <i class="iconfont icon-tuichu"></i>
+        <text>退出</text>
+    </view>
+  </view>
+</view>
